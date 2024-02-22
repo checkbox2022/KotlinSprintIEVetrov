@@ -11,6 +11,7 @@ fun main() {
     minute = 55
     time = timeConvert(hour,minute)
     println("Landing time: $time")
+
 }
 fun isTimeLessThenTen (time:Int) = if (time<10) "0$time" else time.toString()
 fun timeConvert (hour:Int,minute:Int) = "time: ${isTimeLessThenTen(hour)}:${isTimeLessThenTen(minute)}"
