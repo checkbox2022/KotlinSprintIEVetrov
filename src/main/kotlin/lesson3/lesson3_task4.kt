@@ -13,7 +13,6 @@ fun main() {
      стоящей на D2 и продвинувшейся на одну клетку вперед." - Определить нужно было в уме или написать код
      увеличения значения из D2 в D3
     */
-    // println(pointOfEnd)
     move = "$pointOfEntry-$pointOfEnd:${(moveNumber.toInt() + 1)}"
     println(move)
 }
