@@ -9,7 +9,7 @@ fun main() {
     println(average)
 }
 
-/*fun lesson1.lesson1.main() {
+/*fun lesson1.lesson1.lesson1.main() {
     println(addStudentsGrade())
 
 }

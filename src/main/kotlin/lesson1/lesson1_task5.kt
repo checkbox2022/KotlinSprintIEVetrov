@@ -1,3 +1,5 @@
+package lesson1
+
 const val TO_MIN_AND_SEC = 60
 const val TO_HOURS = 3600
 
