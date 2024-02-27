@@ -1,5 +1,9 @@
 package lesson4
+
 const val FAVORABLE_PERCENTAGE_FOR_GROWTH = 20
+const val FAVORABLE_SUNNY_WEATHER = true
+const val AWNING_IS_OPENED = true
+const val UNFAVORABLE_SEASON = "Winter"
 
 fun main() {
     val isWeatherSunny = true
@@ -8,11 +12,11 @@ fun main() {
     val season = "Winter"
 
     val isFriendlyConditionForGrowth =
-        if (isWeatherSunny == true && isAwningOpen == true
-            && percentageAirHumidity == FAVORABLE_PERCENTAGE_FOR_GROWTH
-            && season != "Winter"
-        ) true
-        else false
+        (isWeatherSunny == FAVORABLE_SUNNY_WEATHER
+                && isAwningOpen == AWNING_IS_OPENED
+                && percentageAirHumidity == FAVORABLE_PERCENTAGE_FOR_GROWTH
+                && season != UNFAVORABLE_SEASON
+                )
 
     println("Are the conditions now favorable for the growth of legumes: $isFriendlyConditionForGrowth")
 }
