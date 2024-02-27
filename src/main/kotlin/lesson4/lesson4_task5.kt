@@ -13,17 +13,8 @@ fun main() {
     println("Укажите кол-во доступной продукции на корабле:")
     val stockOfProvisions = readln().toInt()
 
-    val saillingPermit =
-        if ((isWorkShip == true
-                    && numberOfMembers in 55..70
-                    && stockOfProvisions > 50
-                    && isFavorableWeather == true || false)
-            || (isWorkShip == false
-                    && numberOfMembers == 70
-                    && stockOfProvisions >= 50
-                    && isFavorableWeather == true)
-        ) true
-        else false
+    val sailingPermit =
+        (isWorkShip && numberOfMembers in 55..70 && stockOfProvisions > 50 && isFavorableWeather) || (!isWorkShip && numberOfMembers == 70 && stockOfProvisions >= 50 && isFavorableWeather)
 
-    println(saillingPermit)
+    println(sailingPermit)
 }
