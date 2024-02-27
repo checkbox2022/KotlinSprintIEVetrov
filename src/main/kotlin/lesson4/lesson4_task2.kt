@@ -7,10 +7,10 @@ fun main() {
     var weight = 20
     var volume = 80
     println("Cargo with weight = $weight kg and volume = $volume liter matches the category: " +
-            "${if (weight >= MIN_WEIGHT && weight <= MAX_WEIGHT && volume <= MAX_VOLUME) true else false}")
+            "${weight >= MIN_WEIGHT && weight <= MAX_WEIGHT && volume < MAX_VOLUME}")
 
     weight = 50
     volume = 100
     println("Cargo with weight = $weight kg and volume = $volume liter matches the category: " +
-            "${if (weight >= MIN_WEIGHT && weight <= MAX_WEIGHT && volume <= MAX_VOLUME) true else false}")
+            "${weight >= MIN_WEIGHT && weight <= MAX_WEIGHT && volume < MAX_VOLUME}")
 }
