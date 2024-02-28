@@ -8,9 +8,9 @@ fun main() {
 
     val userAge = YEAR - userYearOfBirth
     val isUserAgeMajority = userAge >= MAJORITY
-    val adultContent =
+    val adultContentAccess =
         if (isUserAgeMajority) "Access to hidden content is opened!"
         else "Access to hidden content is closed!"
 
-    println(adultContent)
+    println(adultContentAccess)
 }
