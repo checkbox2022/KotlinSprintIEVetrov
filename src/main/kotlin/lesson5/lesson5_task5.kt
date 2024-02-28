@@ -1,7 +1,7 @@
 package lesson5
 
 fun main() {
-    val listOfRandomValues = (1..3).map { (0..12).random() }
+    val listOfRandomValues = (1..3).map { (0..42).random() }
     val listOfUserValues = mutableListOf<Int>()
 
     print("Enter three random numbers from 0 to 42.\nEnter first number: ")
