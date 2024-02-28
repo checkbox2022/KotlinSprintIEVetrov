@@ -1,9 +1,10 @@
 package lesson4
 
 fun main() {
+    val trainingDay = 5
     var isEven = false
 
-    println("Hands: ${!isEven}\nLegs:  $isEven \nBack:  $isEven\nPress: ${!isEven}")
+    if (trainingDay%2==0) isEven = true
 
-    isEven = !isEven
+    println("Hands: ${!isEven}\nLegs:  $isEven \nBack:  $isEven\nPress: ${!isEven}")
 }
