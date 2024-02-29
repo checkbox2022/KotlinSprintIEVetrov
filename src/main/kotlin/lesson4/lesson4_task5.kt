@@ -1,5 +1,10 @@
 package lesson4
 
+const val MIN_MEMBERS = 55
+const val MAX_MEMBERS = 70
+const val RECOMMEND_PROVISION = 50
+
+
 fun main() {
     println("Сообщите о наличии/отсутствии повреждений корабля. Введите \"true\" при отсутсвии повреждений или \"fasle\" при наличии:")
     val isWorkShip = readln().toBoolean()
@@ -14,7 +19,7 @@ fun main() {
     val stockOfProvisions = readln().toInt()
 
     val sailingPermit =
-        (isWorkShip && numberOfMembers in 55..70 && stockOfProvisions > 50 && isFavorableWeather) || (!isWorkShip && numberOfMembers == 70 && stockOfProvisions >= 50 && isFavorableWeather)
+        (isWorkShip && numberOfMembers in MIN_MEMBERS..MAX_MEMBERS && stockOfProvisions > RECOMMEND_PROVISION) || (numberOfMembers == MAX_MEMBERS && stockOfProvisions >= RECOMMEND_PROVISION && isFavorableWeather)
 
     println(sailingPermit)
 }
