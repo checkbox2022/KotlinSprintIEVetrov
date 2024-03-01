@@ -1,10 +1,13 @@
 package lesson6
 
+const val ATTEMPTS = 5
 const val LAST_ATTEMPT = 1
+const val MIN_RANDOM_NUMBER = 0
+const val MAX_RANDOM_NUMBER = 9
 
 fun main() {
-    val randomNumber = (0..9).random()
-    var countAttempts = 5
+    val randomNumber = (MIN_RANDOM_NUMBER..MAX_RANDOM_NUMBER).random()
+    var countAttempts = ATTEMPTS
 
     print("У вас $countAttempts попыток. Введите число: ")
     var yourNumber = readln().toInt()
