@@ -4,11 +4,8 @@ const val SECOND: Long = 1000
 
 fun main() {
     print("Enter how many seconds do you need before PAUSE: ")
-    var pauseTime = readln().toInt()
+    val pauseTime = readln().toInt()
+    Thread.sleep(pauseTime * SECOND)
 
-    while (pauseTime > 0) {
-        pauseTime--
-        Thread.sleep(SECOND)
-    }
-    println("\nPAUSE")
+    println("$pauseTime seconds have passed!")
 }
