@@ -1,11 +1,10 @@
 package lesson7
 
-const val MIN_CODE_NUM = 1000
-const val MAX_CODE_NUM = 9999
-
 fun main() {
+    val codeRange = 1000..9999
+
     do {
-        val smsCode = (MIN_CODE_NUM..MAX_CODE_NUM).random()
+        val smsCode = codeRange.random()
         println("Your authorization code: $smsCode")
 
         print("Enter you authorization code: ")
