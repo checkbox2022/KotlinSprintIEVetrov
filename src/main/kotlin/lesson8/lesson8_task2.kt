@@ -12,6 +12,4 @@ fun main() {
     }
 
     println(isIngredient)
-
-
 }
