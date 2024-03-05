@@ -5,9 +5,9 @@ fun main() {
     println("There are basic ingredients in the recipe: $ingredients")
 
     println("Do you want to add any ingredient?")
-    val answer = readln().lowercase()
+    val answer = readln()
 
-    if (answer == "yes") {
+    if (answer.equals("yes", ignoreCase = true)) {
         print("Enter the name of ingredient: ")
         val newIngredient = readln()
         ingredients.add(newIngredient)
