@@ -6,7 +6,7 @@ const val MIN_PASSWORD_LENGTH = 6
 fun main() {
     var password = ""
     val passwordContent = listOf(('A'..'Z'), ('a'..'z'), ('0'..'9'))
-    var passwordLength = MIN_PASSWORD_LENGTH
+    var passwordLength: Int
     println("Minimum password length is 6")
 
     do {
@@ -18,6 +18,8 @@ fun main() {
 
     for (i in UNIQUE_THREE_FIRST_SYMBOLS until passwordLength)
         password += (passwordContent[(0..2).random()].random())
+
+    password = password.toList().shuffled().joinToString("")
 
     println(password)
 }
