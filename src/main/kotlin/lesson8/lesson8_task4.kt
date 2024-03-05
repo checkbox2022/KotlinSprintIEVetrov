@@ -7,7 +7,7 @@ fun main() {
     print("\nWhich ingredient do you want to replace: ")
     val ingredientSearch = readln()
 
-    if (ingredients.indexOf(ingredientSearch) == -1) println("\nThere is no such ingredient on the list!")
+    if (ingredientSearch !in ingredients) println("\nThere is no such ingredient on the list!")
     else {
         print("\nSpecify which ingredient you need to replace the current one with: ")
         val ingredientReplace = readln()
