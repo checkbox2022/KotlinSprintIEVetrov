@@ -6,8 +6,8 @@ fun main() {
 
     val ingredients = arrayOf("potato", "tomato", "onion", "garlic", "salt")
 
-    val isIngredient = when (ingredients.indexOf(search)) {
-        -1 -> "The ingredient is missing"
+    val isIngredient = when (search in ingredients) {
+        false -> "The ingredient is missing"
         else -> "There is a $search ingredient in the recipe"
     }
 
