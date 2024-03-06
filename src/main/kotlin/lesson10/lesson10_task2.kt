@@ -9,10 +9,12 @@ fun main() {
     print("Register a password: ")
     val password = readln()
 
-    validationUserData(login, password)
+    val lengthDataChecker =
+        if (getValidationUserData(login) && getValidationUserData(password)) "You are welcome!"
+        else "The username or password is not long enough"
+
+    println(lengthDataChecker)
 }
 
-fun validationUserData(login: String, password: String) {
-    if (login.length < MIN_CONTENT_SYMBOL || password.length < MIN_CONTENT_SYMBOL)
-        println("Login and password are not long enough")
-}
+fun getValidationUserData(data: String) = data.length >= MIN_CONTENT_SYMBOL
+
