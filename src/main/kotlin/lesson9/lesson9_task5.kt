@@ -1,5 +1,7 @@
 package lesson9
 
+import java.util.*
+
 const val MAX_INGREDIENTS = 5
 
 fun main() {
@@ -12,5 +14,6 @@ fun main() {
 
     val ingredientsSortSet = ingredients.toSet().sorted()
 
-    println(ingredientsSortSet.joinToString(", ").capitalize())
+    println(ingredientsSortSet.joinToString(", ")
+        .replaceFirstChar { if (it.isLowerCase()) it.titlecase(Locale.getDefault()) else it.toString() })
 }
