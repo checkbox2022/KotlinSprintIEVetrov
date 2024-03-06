@@ -1,10 +1,10 @@
 package lesson10
 
 fun main() {
-    val computerMove = diceShuffler()
+    val computerMove = rollTheDice()
     println("The computer made its move and threw away the dice: $computerMove")
 
-    val userMove = diceShuffler()
+    val userMove = rollTheDice()
     println("The user made its move and threw away the dice: $userMove")
 
     val result = if (computerMove > userMove) "Computer WIN!"
@@ -14,4 +14,4 @@ fun main() {
     println(result)
 }
 
-fun diceShuffler() = (1..6).random()
+fun rollTheDice() = (1..6).random()
