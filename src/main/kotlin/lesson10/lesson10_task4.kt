@@ -1,31 +1,32 @@
 package lesson10
 
-import java.util.*
-
 fun main() {
-    var countGames = 0
+    var manWinsCounter = 0
 
     do {
-        countGames++
-        diceMover()
+        manWinsCounter += launchNewRound()
         println("\nDo you want to play it again? ")
-        val answer = readln().lowercase(Locale.getDefault())
-    } while (answer == "yes")
+        val answer = readln().equals("yes", ignoreCase = true)
+    } while (answer)
 
-    println("You have played $countGames games")
+    println("The man won $manWinsCounter games")
 }
 
-fun diceShufflerNew() = (1..6).random()
-fun diceMover() {
-    val computerMove = diceShufflerNew()
+fun rollTheDice() = (1..6).random()
+
+fun launchNewRound(): Int {
+    val computerMove = rollTheDice()
     println("The computer made its move and threw away the dice: $computerMove")
 
-    val userMove = diceShufflerNew()
+    val userMove = rollTheDice()
     println("The user made its move and threw away the dice: $userMove")
 
-    val result = if (computerMove > userMove) "Computer WIN!"
-    else if (computerMove < userMove) "User WIN!"
-    else "Draw!"
+    if (computerMove < userMove) {
+        println("User WIN!")
+        return 1
+    }
+    else if (computerMove > userMove) println("Computer WIN!")
+    else println("Draw!")
 
-    println(result)
+    return 0
 }
