@@ -7,21 +7,31 @@ fun main() {
     print("Enter password: ")
     val password = readln()
 
-    val token = authorization(login, password)
+    val token = verifyAndGetToken(login, password)
 
-    println(shoppingCardReturner(token))
+    val out =
+        when (val shoppingCard = returnShoppingCard(token)) {
+            null -> "Failed authorization attempt"
+            else -> shoppingCard.joinToString(", ")
+        }
+
+    println(out)
 }
 
-fun shoppingCardReturner(token: String?) =
-    if (token != null) listOf("T-short", "Jeans", "Hat").joinToString(", ") else "Failed authorization attempt!"
+fun returnShoppingCard(token: String?): List<String>? {
+    val shoppingCard = listOf("T-short", "Jeans", "Hat")
 
-fun authorization(login: String, password: String): String? {
+    return if (token != null) shoppingCard else null
+}
+
+
+fun verifyAndGetToken(login: String, password: String): String? {
     val userLogin = "Pav"
     val userPassword = "123"
-    return if (login == userLogin && password == userPassword) tokenGenerator() else null
+    return if (login == userLogin && password == userPassword) generateToken() else null
 }
 
-fun tokenGenerator(): String? {
+fun generateToken(): String {
     val symbols = ('A'..'Z') + ('a'..'z') + (0..9)
     var token = ""
 
