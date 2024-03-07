@@ -4,7 +4,15 @@ fun main() {
     var manWinsCounter = 0
 
     do {
-        manWinsCounter += launchNewRound()
+        when (launchNewRound()) {
+            1 -> {
+                manWinsCounter++
+                println("Man win!")
+            }
+
+            0 -> println("Draw!")
+            else -> println("Computer win!")
+        }
         println("\nDo you want to play it again? ")
         val answer = readln().equals("yes", ignoreCase = true)
     } while (answer)
@@ -21,12 +29,7 @@ fun launchNewRound(): Int {
     val userMove = rollTheDice()
     println("The user made its move and threw away the dice: $userMove")
 
-    if (computerMove < userMove) {
-        println("User WIN!")
-        return 1
-    }
-    else if (computerMove > userMove) println("Computer WIN!")
-    else println("Draw!")
-
-    return 0
+    return if (computerMove < userMove) 1
+    else if (computerMove > userMove) -1
+    else 0
 }
