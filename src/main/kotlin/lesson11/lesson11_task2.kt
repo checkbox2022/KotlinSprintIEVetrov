@@ -12,9 +12,8 @@ class User2(
     val login: String,
     var password: String,
     val email: String,
+    var bio: String = "",
 ) {
-    var bio = ""
-
     fun toDisplayUserInfo() {
         println("\nid: $id\nlogin: $login\npassword: $password\nemail: $email\nbio: $bio")
     }
