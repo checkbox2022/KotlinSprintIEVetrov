@@ -2,23 +2,28 @@ package lesson13
 
 fun main() {
     val phoneBookList = mutableListOf<Contact3>()
+    val newContact3 = addContact()
 
-    addContact(phoneBookList)
+    if (newContact3 != null) {
+        phoneBookList.add(newContact3)
 
-    if (phoneBookList.size > 0) phoneBookList.last().printContact()
-}
-
-class Contact3(var name: String, var phoneNumber: Long, var companyTitle: String?){
-    fun printContact(){
-        println("""
-            Name: $name
-            Number: $phoneNumber
-            Company: $companyTitle
-        """.trimIndent())
+        phoneBookList.last().printContact()
     }
 }
 
-fun addContact(list: MutableList<Contact3>): List<Contact3>{
+class Contact3(var name: String, var phoneNumber: Long, val companyTitle: String?) {
+    fun printContact() {
+        println(
+            """
+            Name: $name
+            Number: $phoneNumber
+            Company: $companyTitle
+        """.trimIndent()
+        )
+    }
+}
+
+fun addContact(): Contact3? {
 
     print("Add name: ")
     val name = readln()
@@ -26,16 +31,15 @@ fun addContact(list: MutableList<Contact3>): List<Contact3>{
     print("Add number: ")
     val number: Long? = readln().toLongOrNull()
 
-    if (number == null){
+    if (number == null) {
         println("You have to add a number!")
-        return list
+        return null
     }
-    else list.add(Contact3(name, number, null))
 
     print("Add company: ")
-    val company = readln()
-    if (company != "") list.last().companyTitle = company
+    var company: String? = readln()
+    if (company == "") company = null
 
-    return list
+    return Contact3(name, number, company)
 }
 
