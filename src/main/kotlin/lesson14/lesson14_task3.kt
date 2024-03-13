@@ -3,18 +3,24 @@ package lesson14
 import kotlin.math.PI
 import kotlin.math.pow
 
+const val COLOR_WHITE = "white"
+const val COLOR_BLACK = "black"
+const val COLOR_YELLOW = "yellow"
+const val COLOR_GRAY = "gray"
+
+
 fun main() {
     val listOfFigures = mutableListOf<Figure>()
     listOfFigures.addAll(
         0, listOf(
-            Circle("white", 5.5),
-            Circle("black", 3.3),
-            Rectangle("yellow", 3.4, 2.1),
-            Rectangle("white", 3.7, 2.8),
-            Circle("gray", 6.1),
-            Circle("black", 3.7),
-            Rectangle("white", 7.2, 2.9),
-            Rectangle("yellow", 8.4, 5.1),
+            Circle(COLOR_WHITE, 5.5),
+            Circle(COLOR_BLACK, 3.3),
+            Rectangle(COLOR_YELLOW, 3.4, 2.1),
+            Rectangle(COLOR_WHITE, 3.7, 2.8),
+            Circle(COLOR_GRAY, 6.1),
+            Circle(COLOR_BLACK, 3.7),
+            Rectangle(COLOR_WHITE, 7.2, 2.9),
+            Rectangle(COLOR_YELLOW, 8.4, 5.1),
         )
     )
 
