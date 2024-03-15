@@ -12,17 +12,17 @@ fun main() {
     mars.listOfSatellites.forEach { println(it.name) }
 }
 
-abstract class CelestialBodies(val name: String, val isAtmosphere: Boolean, val isLandingPossible: Boolean)
+abstract class CelestialBody(val name: String, val isAtmosphere: Boolean, val isLandingPossible: Boolean)
 
 class Satellite(
     name: String,
     isAtmosphere: Boolean,
     isLandingPossible: Boolean,
-) : CelestialBodies(name, isAtmosphere, isLandingPossible)
+) : CelestialBody(name, isAtmosphere, isLandingPossible)
 
 class Planet(
     name: String,
     isAtmosphere: Boolean,
     isLandingPossible: Boolean,
     val listOfSatellites: List<Satellite>,
-) : CelestialBodies(name, isAtmosphere, isLandingPossible)
+) : CelestialBody(name, isAtmosphere, isLandingPossible)
