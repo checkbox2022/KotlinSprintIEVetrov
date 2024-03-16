@@ -2,18 +2,16 @@ package lesson16
 
 fun main() {
     val order1 = Order(1)
-    println(order1.isReady)
-
-    requestChangeOrderStatus(order1, true)
-    println(order1.isReady)
+    order1.requestChangeOrderStatus(true)
 }
 
-class Order(private val orderId: Int, var isReady: Boolean = false) {
-    fun changeOrderStatus(newStatus: Boolean) {
+class Order(private val orderId: Int, private var isReady: Boolean = false) {
+    private fun changeOrderStatus(newStatus: Boolean) {
         isReady = newStatus
+    }
+
+    fun requestChangeOrderStatus(newStatusRequest: Boolean) {
+        changeOrderStatus(newStatusRequest)
     }
 }
 
-fun requestChangeOrderStatus(order: Order, newStatusRequest: Boolean) {
-    order.changeOrderStatus(newStatusRequest)
-}
