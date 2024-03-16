@@ -7,8 +7,10 @@ const val MAX_NUMBER: Int = 6
 
 fun main() {
     val dice1 = Dice()
+    dice1.showDiceResult()
 }
 
 class Dice {
-    private val randomSide = Random.nextInt(MIN_NUMBER, MAX_NUMBER).also { println(it) }
+    private val randomSide = Random.nextInt(MIN_NUMBER, MAX_NUMBER)
+    fun showDiceResult() = println(randomSide)
 }
