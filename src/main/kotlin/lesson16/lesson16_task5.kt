@@ -12,6 +12,8 @@ fun main() {
     player1.getTreatment()
     player1.takeDamage(ENEMY_DAMAGE)
     player1.getTreatment()
+    player1.takeDamage(ENEMY_DAMAGE)
+    player1.getTreatment()
 }
 
 class Player {
@@ -19,10 +21,9 @@ class Player {
     private var impactForce = 25
 
     fun takeDamage(damage: Int) {
-        if (hp > 0) {
-            hp -= damage
-            println("You took $damage damage! Now your HP is $hp")
-        } else println("You're already dead")
+        hp -= damage
+        if (hp < 1) die()
+        else println("You took $damage damage! Now your HP is $hp")
     }
 
     fun getTreatment() {
@@ -30,7 +31,7 @@ class Player {
             val treatmentPoints = 10
             hp += treatmentPoints
             println("You have healed by $treatmentPoints units! Now your HP is $hp")
-        } else die()
+        }
     }
 
     private fun die() {
