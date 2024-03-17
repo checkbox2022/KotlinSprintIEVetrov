@@ -1,6 +1,6 @@
 package lesson17
 
-class Quiz(val _question: String, val _answer: String) {
+class Quiz(_question: String, _answer: String) {
     val question = _question
         get() = field
 
