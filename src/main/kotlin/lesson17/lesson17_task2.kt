@@ -7,12 +7,9 @@ fun main() {
     println(ship.name)
 }
 
-
-class Ship {
+class Ship(var averageSpeed: Int = 100, var port: String = "Ocean") {
     var name = "Ship"
         set(value) {
-            if (value != field) field.also { println("You can't change the name!") }
+            if (value != field) println("You can't change the name!")
         }
-    var averageSpeed = 100
-    var port = "Ocean"
 }
