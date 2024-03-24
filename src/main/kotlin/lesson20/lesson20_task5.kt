@@ -5,21 +5,27 @@ fun main() {
     val robot = Robot()
 
     robot.say()
-    robot.setModifier()
+    robot.setModifier { it.split(" ").reversed().joinToString(" ") }
     robot.say()
 
 }
 
 class Robot {
 
-    var randomWord = listOf("Hello there!", "What up?", "Let's go!", "Ok, ehhh", "Get ready").random()
+    private var modifier: ((String) -> String) = { it }
 
-    fun say() = println(randomWord)
+    var buffer: String? = null
 
-    val setModifier: () -> Unit = {
-        randomWord = randomWord.split(" ").reversed().joinToString(" ")
+    val randomSentence = listOf("Hello there!", "What up?", "Let's go!", "Ok, ehhh", "Get ready").random()
+
+    fun say() {
+        val sentence = buffer ?: randomSentence
+        println(modifier(sentence))
+        buffer = sentence
+    }
+
+    fun setModifier(modifier: (String) -> String) {
+        this.modifier = modifier
     }
 
 }
-
-
