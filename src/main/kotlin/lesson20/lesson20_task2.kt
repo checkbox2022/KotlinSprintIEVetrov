@@ -1,14 +1,14 @@
 package lesson20
 
-const val HEALTH_POTION_POWER = 35
-
 fun main() {
 
     val player = Player("Pavel", 50)
 
     val healingPotion: (Player) -> Unit = {
-        it.currentHealth += HEALTH_POTION_POWER
+        it.currentHealth = it.maxHealth
     }
+
+    println(player.currentHealth)
 
     healingPotion(player)
 
