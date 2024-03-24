@@ -14,8 +14,9 @@ fun main() {
 }
 
 fun File.addNewLineToTop(newText: String) {
+
     val bufferWordsFile = readLines()
-    delete()
+    writeText("")
 
     appendText("$newText\n")
 
