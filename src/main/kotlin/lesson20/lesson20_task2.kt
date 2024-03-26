@@ -2,9 +2,9 @@ package lesson20
 
 fun main() {
 
-    val player = Player("Pavel", 50)
+    val player = Player3("Pavel", 50)
 
-    val healingPotion: (Player) -> Unit = {
+    val healingPotion: (Player3) -> Unit = {
         it.currentHealth = it.maxHealth
     }
 
@@ -16,4 +16,4 @@ fun main() {
 
 }
 
-class Player(val name: String, var currentHealth: Int, val maxHealth: Int = 100)
+class Player3(val name: String, var currentHealth: Int, val maxHealth: Int = 100)

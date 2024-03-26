@@ -2,10 +2,10 @@ package lesson20
 
 fun main() {
 
-    val player1 = Player(true)
-    val player2 = Player(false)
+    val player1 = Player2(true)
+    val player2 = Player2(false)
 
-    val keyChecker: (Player) -> Unit = {
+    val keyChecker: (Player2) -> Unit = {
         when (it.isKey) {
             true -> println("The player opened the door")
             else -> println("Player hasn't key")
@@ -17,4 +17,4 @@ fun main() {
 
 }
 
-class Player(var isKey: Boolean)
+class Player2(var isKey: Boolean)

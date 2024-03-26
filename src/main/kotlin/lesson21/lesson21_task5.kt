@@ -2,13 +2,13 @@ package lesson21
 
 fun main() {
 
-    val player = Player()
+    val player = Player6()
 
     println(player.mapOfSkills.maxCategory())
 
 }
 
-class Player {
+class Player6 {
 
     val mapOfSkills = mapOf<String, Int>(
         "Speed" to 15,

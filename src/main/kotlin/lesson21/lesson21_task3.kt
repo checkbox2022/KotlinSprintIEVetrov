@@ -2,7 +2,7 @@ package lesson21
 
 fun main() {
 
-    val player = Player("Pavel", 15)
+    val player = Player5("Pavel", 15)
 
     println(player.isHealthy())
 
@@ -11,6 +11,6 @@ fun main() {
 
 }
 
-class Player(val name: String, var currentHealth: Int, val maxHealth: Int = 100)
+class Player5(val name: String, var currentHealth: Int, val maxHealth: Int = 100)
 
-fun Player.isHealthy() = maxHealth == currentHealth
+fun Player5.isHealthy() = maxHealth == currentHealth
