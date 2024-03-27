@@ -1,11 +1,12 @@
 package lesson22
 
 fun main() {
-    val viewModel = ViewModel(MainScreenState())
+    val viewModel = ViewModel()
     viewModel.loadData()
 }
 
-class ViewModel(var mainScreenState: MainScreenState){
+class ViewModel{
+    private var mainScreenState: MainScreenState = MainScreenState()
     fun loadData(){
         println(mainScreenState)
         Thread.sleep(1000)
